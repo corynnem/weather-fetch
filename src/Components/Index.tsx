@@ -4,8 +4,8 @@ import Weather from './Weather'
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 class OpenWeather extends Component <{}, IState> {
-    constructor(){
-        super('')
+    constructor(string: string){
+        super(string)
         this.state = {
             key: '55408e009ad035e0b0cea0036b638810',
             baseURL: 'https://api.openweathermap.org/data/2.5/onecall',
@@ -62,37 +62,37 @@ class OpenWeather extends Component <{}, IState> {
         return(
             <div>
                 {
-                    this.state.searched ? this.state.weather.weather.map((weather: ICity) => {
+                    this.state.searched ? this.state.weather.weather.map((weather: ICity, i: number) => {
                        
-                            return weather.main == 'Clouds' ?
-                              <div style={{backgroundColor: '#8e9aaf', width: '400px', height: '500px', borderRadius: '10px', padding: '1%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>
-                                <iframe  src="https://giphy.com/embed/3o7aD4WmSr6b9LgOli" width="280" height="170" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cat-cute-yes-3o7aD4WmSr6b9LgOli">via GIPHY</a></p>
+                            return weather.main === 'Clouds' ?
+                              <div style={{backgroundColor: '#8e9aaf', width: '400px', height: '500px', borderRadius: '10px', padding: '1%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} key={i} >
+                                <iframe title="clouds" src="https://giphy.com/embed/3o7aD4WmSr6b9LgOli" width="280" height="170" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cat-cute-yes-3o7aD4WmSr6b9LgOli">via GIPHY</a></p>
                                 <Weather weather={weather} farenheight={this.state.farenheight} conversion={this.conversion} weatherInfo={this.state.weather} />
                               </div>
                               : weather.main === 'Sun' ?
-                                <div style={{backgroundColor: '#feeafa', width: '400px', height: '500px', borderRadius: '10px', padding: '1%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>
-                                  <iframe  src="https://giphy.com/embed/lI8YNZc734UH6" width="380" height="180" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/sunny-lI8YNZc734UH6">via GIPHY</a></p>
+                                <div style={{backgroundColor: '#feeafa', width: '400px', height: '500px', borderRadius: '10px', padding: '1%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} key={i}>
+                                  <iframe title='sun' src="https://giphy.com/embed/lI8YNZc734UH6" width="380" height="180" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/sunny-lI8YNZc734UH6">via GIPHY</a></p>
                                   <Weather weather={weather} farenheight={this.state.farenheight} conversion={this.conversion} weatherInfo={this.state.weather} />
                               </div >
                                 : weather.main === 'Rain' ?
-                                  <div style={{backgroundColor: '#dee2ff', width: '400px', height: '500px', borderRadius: '10px', padding: '1%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} >
-                                    <iframe  src="https://giphy.com/embed/dI3D3BWfDub0Q" width="280" height="170" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/rain-ahh-dI3D3BWfDub0Q">via GIPHY</a></p>
+                                  <div style={{backgroundColor: '#dee2ff', width: '400px', height: '500px', borderRadius: '10px', padding: '1%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} key={i} >
+                                    <iframe title='rain' src="https://giphy.com/embed/dI3D3BWfDub0Q" width="280" height="170" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/rain-ahh-dI3D3BWfDub0Q">via GIPHY</a></p>
                                 <Weather weather={weather} farenheight={this.state.farenheight} conversion={this.conversion} weatherInfo={this.state.weather} />
                                   </div>
                                   : weather.main === 'Drizzle' ?
-                                    <div style={{backgroundColor: '#dee2ff', width: '400px', height: '500px', borderRadius: '10px', padding: '1%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>
-                                      <iframe  src="https://giphy.com/embed/dI3D3BWfDub0Q" width="280" height="170" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/rain-ahh-dI3D3BWfDub0Q">via GIPHY</a></p>
+                                    <div style={{backgroundColor: '#dee2ff', width: '400px', height: '500px', borderRadius: '10px', padding: '1%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} key={i}>
+                                      <iframe title='drizzle' src="https://giphy.com/embed/dI3D3BWfDub0Q" width="280" height="170" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/rain-ahh-dI3D3BWfDub0Q">via GIPHY</a></p>
                                       <Weather weather={weather} farenheight={this.state.farenheight} conversion={this.conversion} weatherInfo={this.state.weather} />
 
                                     </div >
                                     : weather.main === 'Clear' ?
-                                      <div style={{backgroundColor: '#feeafa', width: '400px', height: '500px', borderRadius: '10px', padding: '1%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>
-                                        <iframe  src="https://giphy.com/embed/0tLvvglXfGOITSFJSU" width="280" height="180" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/happy-day-beautiful-clear-sky-0tLvvglXfGOITSFJSU">via GIPHY</a></p>
+                                      <div style={{backgroundColor: '#feeafa', width: '400px', height: '500px', borderRadius: '10px', padding: '1%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} key={i}>
+                                        <iframe title='clear skys' src="https://giphy.com/embed/0tLvvglXfGOITSFJSU" width="280" height="180" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/happy-day-beautiful-clear-sky-0tLvvglXfGOITSFJSU">via GIPHY</a></p>
                                          <Weather weather={weather} farenheight={this.state.farenheight} conversion={this.conversion} weatherInfo={this.state.weather} />
 
                                       </div>
                   
-                                      : <div style={{backgroundColor: 'a0c4ff'}}><iframe src="https://giphy.com/lafaembed/za5xikuRr0OzK" width="380" height="270" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/batman-weather-za5xikuRr0OzK">via GIPHY</a></p></div>
+                                      : <div style={{backgroundColor: 'a0c4ff'}}><iframe title="no weather" src="https://giphy.com/lafaembed/za5xikuRr0OzK" width="380" height="270" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/batman-weather-za5xikuRr0OzK">via GIPHY</a></p></div>
                   
                           }) : this.state.weather.weather === [] ? <h4>No info found yet, try searching a different city to find more!</h4>: <CircularProgress style={{marginTop: '50%'}}/>
                 }

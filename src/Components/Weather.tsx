@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Chip from '@mui/material/Chip';
 import CloudIcon from '@material-ui/icons/Cloud';
 import ExploreIcon from '@material-ui/icons/Explore';
@@ -21,12 +21,10 @@ const Weather = (props: IProps) => {
     weatherInfo,
   } = props
 
-  useEffect(() => console.log(weather, weatherInfo))
 
   return (
     <div>
       <h1>{weather.name}</h1>
-      <h3></h3>
       <Chip
         icon={<CloudIcon />}
         variant='outlined'
