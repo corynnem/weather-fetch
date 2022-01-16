@@ -65,28 +65,28 @@ class OpenWeather extends Component <{}, IState> {
                     this.state.searched ? this.state.weather.weather.map((weather: ICity, i: number) => {
                        
                             return weather.main === 'Clouds' ?
-                              <div style={{backgroundColor: '#8e9aaf', width: '400px', height: '500px', borderRadius: '10px', padding: '1%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} key={i} >
+                              <div style={{backgroundColor: '#8e9aaf', width: '350px', height: '450px', borderRadius: '10px', padding: '1%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} key={i} >
                                 <iframe title="clouds" src="https://giphy.com/embed/3o7aD4WmSr6b9LgOli" width="280" height="170" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cat-cute-yes-3o7aD4WmSr6b9LgOli">via GIPHY</a></p>
                                 <Weather weather={weather} farenheight={this.state.farenheight} conversion={this.conversion} weatherInfo={this.state.weather} />
                               </div>
                               : weather.main === 'Sun' ?
-                                <div style={{backgroundColor: '#feeafa', width: '400px', height: '500px', borderRadius: '10px', padding: '1%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} key={i}>
+                                <div style={{backgroundColor: '#feeafa', width: '350px', height: '450px', borderRadius: '10px', padding: '1%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} key={i}>
                                   <iframe title='sun' src="https://giphy.com/embed/lI8YNZc734UH6" width="380" height="180" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/sunny-lI8YNZc734UH6">via GIPHY</a></p>
                                   <Weather weather={weather} farenheight={this.state.farenheight} conversion={this.conversion} weatherInfo={this.state.weather} />
                               </div >
                                 : weather.main === 'Rain' ?
-                                  <div style={{backgroundColor: '#dee2ff', width: '400px', height: '500px', borderRadius: '10px', padding: '1%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} key={i} >
+                                  <div style={{backgroundColor: '#dee2ff', width: '350px', height: '450px', borderRadius: '10px', padding: '1%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} key={i} >
                                     <iframe title='rain' src="https://giphy.com/embed/dI3D3BWfDub0Q" width="280" height="170" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/rain-ahh-dI3D3BWfDub0Q">via GIPHY</a></p>
                                 <Weather weather={weather} farenheight={this.state.farenheight} conversion={this.conversion} weatherInfo={this.state.weather} />
                                   </div>
                                   : weather.main === 'Drizzle' ?
-                                    <div style={{backgroundColor: '#dee2ff', width: '400px', height: '500px', borderRadius: '10px', padding: '1%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} key={i}>
+                                    <div style={{backgroundColor: '#dee2ff', width: '350px', height: '450px', borderRadius: '10px', padding: '1%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} key={i}>
                                       <iframe title='drizzle' src="https://giphy.com/embed/dI3D3BWfDub0Q" width="280" height="170" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/rain-ahh-dI3D3BWfDub0Q">via GIPHY</a></p>
                                       <Weather weather={weather} farenheight={this.state.farenheight} conversion={this.conversion} weatherInfo={this.state.weather} />
 
                                     </div >
                                     : weather.main === 'Clear' ?
-                                      <div style={{backgroundColor: '#feeafa', width: '400px', height: '500px', borderRadius: '10px', padding: '1%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} key={i}>
+                                      <div style={{backgroundColor: '#feeafa', width: '350px', height: '450px', borderRadius: '10px', padding: '1%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} key={i}>
                                         <iframe title='clear skys' src="https://giphy.com/embed/0tLvvglXfGOITSFJSU" width="280" height="180" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/happy-day-beautiful-clear-sky-0tLvvglXfGOITSFJSU">via GIPHY</a></p>
                                          <Weather weather={weather} farenheight={this.state.farenheight} conversion={this.conversion} weatherInfo={this.state.weather} />
 
@@ -94,7 +94,7 @@ class OpenWeather extends Component <{}, IState> {
                   
                                       : <div style={{backgroundColor: 'a0c4ff'}}><iframe title="no weather" src="https://giphy.com/lafaembed/za5xikuRr0OzK" width="380" height="270" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/batman-weather-za5xikuRr0OzK">via GIPHY</a></p></div>
                   
-                          }) : this.state.weather.weather === [] ? <h4>No info found yet, try searching a different city to find more!</h4>: <CircularProgress style={{marginTop: '50%'}}/>
+                          }) : this.state.weather.weather === [] ? <h4>No info found yet, try searching a different city to find more!</h4>: <CircularProgress style={{marginTop: '20%'}}/>
                 }
             </div>
         )
